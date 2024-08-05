@@ -4,8 +4,8 @@ WORKDIR /app
 COPY package*.json ./
 COPY tsconfig.json ./
 COPY .npmrc ./ 
-RUN npm install -g npm@latest
 COPY src ./src
+RUN npm install -g npm@latest
 RUN npm ci && npm run build
 
 FROM node:21-alpine3.18 
